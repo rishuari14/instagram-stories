@@ -2,15 +2,12 @@
   "name": "instagram-stories",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://rishuari14.github.io/instagram-stories",
-  "scripts": {
+   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "test": "jest",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build" 
+    "test": "jest"
   },
   "dependencies": {
     "next": "14.2.5",
@@ -25,7 +22,6 @@
     "@types/react-dom": "^18",
     "eslint": "^8",
     "eslint-config-next": "14.2.5",
-    "gh-pages": "^6.1.1",
     "jest": "^29.7.0",
     "jest-environment-jsdom": "^29.7.0",
     "postcss": "^8",
