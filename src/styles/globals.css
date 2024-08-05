@@ -2,19 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
 
 body {
   background: black;
@@ -26,7 +13,6 @@ body {
 .containerForStories {
   background: #fff;
   position: relative;
-
   height: 480px;
   width: 300px;
   border-radius: 8px;
@@ -65,13 +51,6 @@ body {
   margin-right: 5px;
   flex-shrink: 0;
 }
-
-/* @media (max-width: 768px) {
-  .story {
-    width: ;
-    height: 30vw;
-  }
-} */
 
 .story img {
   width: 100;
