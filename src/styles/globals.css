@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 body {
   background: black;
   display: flex;
@@ -57,6 +56,16 @@ body {
   height: 100;
   object-fit: cover;
   object-position: center;
+}
+
+.User {
+  position: absolute;
+  margin: 10px;
+}
+.User h2 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .containerForStoriesView {

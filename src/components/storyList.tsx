@@ -32,7 +32,9 @@ const StoryList: React.FC<TStoryListProps> = ({ stories, onStorySelected }) => {
               src={story.profilePicture}
               alt={story.username}
             />
-            <p>{story.username}</p>
+            <div className="User">
+            <h2>{story.username}</h2>
+            </div>
           </div>
         ))}
       </div>
