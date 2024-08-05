@@ -74,19 +74,24 @@ body {
   background-size: cover;
   background-position: center;
   position: absolute;
+  margin: 0px;
 }
 
 .timelines {
   display: flex;
   align-items: center;
+  gap: 3px;
   justify-content: space-between;
+  position: relative;
+  top: 5px;
+
   /* Adjust as needed */
 }
 
 .timeline {
-  height: 10px;
-  background: black;
-  border-radius: 5px;
+  height: 5px;
+  background: #493730;
+  border-radius: 4px;
   flex-grow: 1;
   position: relative;
   /* Necessary for absolute positioning of progress bar */
@@ -99,13 +104,13 @@ body {
   top: 0;
   left: 0;
   height: 100%;
-  background: blue;
+  background: #9b968f;
   /* Change to your desired color */
   animation: progress 5s linear forwards;
 }
 
 .timeline.completed {
-  background-color: blue;
+  background-color: #9b968f;
 }
 
 @keyframes progress {
@@ -120,6 +125,7 @@ body {
 
 .storyImageContainer {
   height: 100%;
+ 
 }
 
 .storyImageContainer img {
@@ -127,6 +133,7 @@ body {
   height: 100%;
   object-fit: cover;
   object-position: center;
+ 
 }
 
 .storyUserInfo {
