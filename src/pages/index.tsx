@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 //components import
-import StoryList from "../components/storyList";
+import StoryList from "@/components/storyList";
 import StoryView from "@/components/storyView";
 
 //apiRequest import
@@ -11,7 +11,6 @@ import { getData } from "@/apiRequest/stories";
 import { TStory } from "@/types/stories";
 
 export default function Home() {
-  
   const [selectedStory, setSelectedStory] = useState<number | null>(null);
   const [storiesData, setStoriesData] = useState<TStory[]>([]);
 

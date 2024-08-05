@@ -99,7 +99,7 @@ const StoryView: React.FC<TStoryViewProps> = ({ story, onClose }) => {
         </div>
 
         <div className="storyImageContainer">
-          {/* <div className="overlay"></div> */}
+          
 
           <img
             src={story.images[currentIndex]}
@@ -107,11 +107,6 @@ const StoryView: React.FC<TStoryViewProps> = ({ story, onClose }) => {
             onClick={handleImageClick}
           />
         </div>
-        {/* <div className={styles.storyControls}>
-          <button onClick={handlePrev}>&lt;</button>
-          <button onClick={onClose}>X</button>
-          <button onClick={handleNext}>&gt;</button>
-        </div> */}
       </div>
     </div>
   );

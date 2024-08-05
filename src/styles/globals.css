@@ -26,15 +26,25 @@ body {
 .containerForStories {
   background: #fff;
   position: relative;
+
   height: 480px;
   width: 300px;
   border-radius: 8px;
   overflow: hidden;
 }
 
+@media (max-width: 768px) {
+  .containerForStories {
+    width: 100vw;
+    height: 100vh;
+  }
+}
+
 .stories {
   height: 120px;
   width: 100%;
+  display: flex; /* Change to flexbox for even spacing */
+  justify-content: space-between; /* Evenly space stories */
   border-bottom: 1px solid #ddd;
   overflow-x: auto;
   overflow-y: hidden;
@@ -47,13 +57,21 @@ body {
 
 .story {
   border: 3px solid #ffb6c1;
-  height: 80px;
-  width: 80px;
+  height: 70px;
+  width: 70px;
   border-radius: 50%;
   overflow: hidden;
   display: inline-block;
   margin-right: 5px;
+  flex-shrink: 0;
 }
+
+/* @media (max-width: 768px) {
+  .story {
+    width: ;
+    height: 30vw;
+  }
+} */
 
 .story img {
   width: 100;
@@ -73,7 +91,8 @@ body {
 .timelines {
   display: flex;
   align-items: center;
-  justify-content: space-between; /* Adjust as needed */
+  justify-content: space-between;
+  /* Adjust as needed */
 }
 
 .timeline {
@@ -81,7 +100,8 @@ body {
   background: black;
   border-radius: 5px;
   flex-grow: 1;
-  position: relative; /* Necessary for absolute positioning of progress bar */
+  position: relative;
+  /* Necessary for absolute positioning of progress bar */
   /* transition: background-color 0.5s ease; */
 }
 
@@ -91,7 +111,8 @@ body {
   top: 0;
   left: 0;
   height: 100%;
-  background: blue; /* Change to your desired color */
+  background: blue;
+  /* Change to your desired color */
   animation: progress 5s linear forwards;
 }
 
@@ -103,10 +124,12 @@ body {
   0% {
     width: 0%;
   }
+
   100% {
     width: 100%;
   }
 }
+
 .storyImageContainer {
   height: 100%;
 }
@@ -125,8 +148,16 @@ body {
   position: absolute;
   top: 20px;
   width: 100%;
-
+  background: rgba(
+    0,
+    0,
+    0,
+    0.01
+  ); /* Semi-transparent background for better readability */
+  color: white;
+  z-index: 10; /* Ensure it appears above the image */
 }
+
 .profileInfo {
   display: flex;
   color: white;
@@ -139,4 +170,12 @@ body {
   border-radius: 50%;
   object-fit: cover;
   object-position: center;
+}
+
+.logo {
+  width: 125px;
+}
+
+.actionButton {
+  z-index: 20; /* Ensure the action button is on top */
 }
