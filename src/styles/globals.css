@@ -2,32 +2,177 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+.containerForStories {
+  background: #fff;
+  position: relative;
+  height: 480px;
+  width: 300px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .containerForStories {
+    width: 100vw;
+    height: 100vh;
   }
+}
+
+.stories {
+  height: 120px;
+  width: 100%;
+  display: flex; /* Change to flexbox for even spacing */
+  justify-content: space-between; /* Evenly space stories */
+  border-bottom: 1px solid #ddd;
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+}
+
+.stories::-webkit-scrollbar {
+  display: none;
+}
+
+.story {
+  border: none;
+  height: 80px;
+  width: 80px;
+  flex-shrink: 0;
+}
+
+.storyImage {
+  border: 3px solid #ffb6c1;
+  height: 90%;
+  width: 90%;
+  border-radius: 50%;
+  overflow: hidden;
+  display: inline-block;
+  margin-right: 5px;
+ 
+}
+
+.storyImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+
+
+.containerForStoriesView {
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  margin: 0px;
+}
+
+.timelines {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  justify-content: space-between;
+  position: relative;
+  top: 5px;
+
+ 
+}
+
+.timeline {
+  height: 5px;
+  background: #493730;
+  border-radius: 4px;
+  flex-grow: 1;
+  position: relative;
+}
+
+.timeline.active::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: #9b968f;
+  animation: progress 5s linear forwards;
+}
+
+.timeline.completed {
+  background-color: #9b968f;
+}
+
+@keyframes progress {
+  0% {
+    width: 0%;
+  }
+
+  100% {
+    width: 100%;
+  }
+}
+
+.storyImageContainer {
+  height: 100%;
+ 
+}
+
+.storyImageContainer img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+ 
+}
+
+.storyUserInfo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  top: 20px;
+  width: 100%;
+  background: rgba(
+    0,
+    0,
+    0,
+    0.01
+  ); /* Semi-transparent background for better readability */
+  color: white;
+  z-index: 10; /* Ensure it appears above the image */
+}
+
+.profileInfo {
+  display: flex;
+  color: white;
+  gap: 12px;
+}
+
+.profileInfo img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.logo {
+  width: 125px;
+}
+
+.actionButton {
+  z-index: 20; /* Ensure the action button is on top */
+  margin-right: 15px;
+  scale: 1.5;
+}
+
+.storyUsername {
+   text-align: center;
 }
