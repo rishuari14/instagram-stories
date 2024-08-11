@@ -2,7 +2,7 @@
   "name": "instagram-stories",
   "version": "0.1.0",
   "private": true,
-   "scripts": {
+  "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
@@ -10,7 +10,9 @@
     "test": "jest"
   },
   "dependencies": {
+    "mongodb": "^6.8.0",
     "next": "14.2.5",
+    "node-fetch": "^3.3.2",
     "react": "^18",
     "react-dom": "^18"
   },
