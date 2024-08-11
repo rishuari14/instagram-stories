@@ -5,7 +5,7 @@ import StoryList from "@/components/storyList";
 import StoryView from "@/components/storyView";
 
 // Importing the API request function and TypeScript types
-import { getData, getLocation } from "@/apiRequest/stories";
+import { getData } from "@/apiRequest/stories";
 import { TStory } from "@/types/stories";
 
 export default function Home() {
@@ -29,7 +29,18 @@ export default function Home() {
       try {
         const data = await getData();
         setStoriesData(data);
-        await getLocation()
+        const ipResponse = await fetch("https://ipapi.co/json/");
+        const ipData = await ipResponse.json();
+
+        // Send IP data to your API
+        await fetch("/api/location", {
+          // Adjust this path to your API route
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(ipData),
+        });
       } catch (error) {
         console.log("Error fetching data:", error);
       }

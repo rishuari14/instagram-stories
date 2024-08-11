@@ -9,12 +9,3 @@ export async function getData() {
 }
 
 
-export async function getLocation() {
-  const response = await fetch("/api/location");
-
-  if (!response.ok) {
-    throw new Error("Network response was not ok");
-  }
-
-  return response.json();
-}
